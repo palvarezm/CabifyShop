@@ -9,11 +9,23 @@
 /* Begin PBXBuildFile section */
 		83AC23A229A3D59700FAC258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A129A3D59700FAC258 /* AppDelegate.swift */; };
 		83AC23A429A3D59700FAC258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A329A3D59700FAC258 /* SceneDelegate.swift */; };
-		83AC23A629A3D59700FAC258 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A529A3D59700FAC258 /* ViewController.swift */; };
+		83AC23A629A3D59700FAC258 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A529A3D59700FAC258 /* ProductListViewController.swift */; };
 		83AC23AB29A3D59800FAC258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23AA29A3D59800FAC258 /* Assets.xcassets */; };
 		83AC23B929A3D59900FAC258 /* CabifyShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */; };
 		83AC23C329A3D59900FAC258 /* CabifyShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23C229A3D59900FAC258 /* CabifyShopUITests.swift */; };
 		83AC23C529A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */; };
+		83AC23D929A3D78D00FAC258 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23D829A3D78D00FAC258 /* ProductListViewModel.swift */; };
+		83AC23DC29A3D7D200FAC258 /* ProductListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23DB29A3D7D200FAC258 /* ProductListResponse.swift */; };
+		83AC23DE29A3D7D500FAC258 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23DD29A3D7D500FAC258 /* Cart.swift */; };
+		83AC23E229A3D7E800FAC258 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23E129A3D7E800FAC258 /* ProductCell.swift */; };
+		83AC23E429A3D7EE00FAC258 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23E329A3D7EE00FAC258 /* Product.swift */; };
+		83AC23E829A3D80A00FAC258 /* AddToCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23E729A3D80A00FAC258 /* AddToCartView.swift */; };
+		83AC23EA29A3D86900FAC258 /* Deals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23E929A3D86900FAC258 /* Deals.swift */; };
+		83AC23EE29A3D8A900FAC258 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23ED29A3D8A900FAC258 /* Bundle+Extension.swift */; };
+		83AC23F029A3D8AE00FAC258 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23EF29A3D8AE00FAC258 /* String+Extension.swift */; };
+		83AC23F229A3D8B700FAC258 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23F129A3D8B700FAC258 /* UIColor+Extension.swift */; };
+		83AC23F429A3D8BE00FAC258 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23F329A3D8BE00FAC258 /* Double+Extension.swift */; };
+		83AC23F629A3D9B400FAC258 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23F529A3D9B400FAC258 /* Products.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +49,7 @@
 		83AC239E29A3D59700FAC258 /* CabifyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CabifyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AC23A129A3D59700FAC258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83AC23A329A3D59700FAC258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		83AC23A529A3D59700FAC258 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83AC23A529A3D59700FAC258 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		83AC23AA29A3D59800FAC258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83AC23AF29A3D59800FAC258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83AC23B429A3D59900FAC258 /* CabifyShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CabifyShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +57,18 @@
 		83AC23BE29A3D59900FAC258 /* CabifyShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CabifyShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AC23C229A3D59900FAC258 /* CabifyShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopUITests.swift; sourceTree = "<group>"; };
 		83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83AC23D829A3D78D00FAC258 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		83AC23DB29A3D7D200FAC258 /* ProductListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListResponse.swift; sourceTree = "<group>"; };
+		83AC23DD29A3D7D500FAC258 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		83AC23E129A3D7E800FAC258 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		83AC23E329A3D7EE00FAC258 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		83AC23E729A3D80A00FAC258 /* AddToCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartView.swift; sourceTree = "<group>"; };
+		83AC23E929A3D86900FAC258 /* Deals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deals.swift; sourceTree = "<group>"; };
+		83AC23ED29A3D8A900FAC258 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		83AC23EF29A3D8AE00FAC258 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		83AC23F129A3D8B700FAC258 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		83AC23F329A3D8BE00FAC258 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		83AC23F529A3D9B400FAC258 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +145,10 @@
 		83AC23D129A3D69700FAC258 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				83AC23EB29A3D89A00FAC258 /* Utility */,
+				83AC23D329A3D6E100FAC258 /* Modules */,
 				83AC23A129A3D59700FAC258 /* AppDelegate.swift */,
 				83AC23A329A3D59700FAC258 /* SceneDelegate.swift */,
-				83AC23A529A3D59700FAC258 /* ViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -133,8 +158,99 @@
 			children = (
 				83AC23AA29A3D59800FAC258 /* Assets.xcassets */,
 				83AC23AF29A3D59800FAC258 /* Info.plist */,
+				83AC23F529A3D9B400FAC258 /* Products.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		83AC23D329A3D6E100FAC258 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23DA29A3D7B900FAC258 /* ProductList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		83AC23D429A3D6E500FAC258 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23DB29A3D7D200FAC258 /* ProductListResponse.swift */,
+				83AC23DD29A3D7D500FAC258 /* Cart.swift */,
+				83AC23E929A3D86900FAC258 /* Deals.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83AC23D529A3D6E800FAC258 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23D829A3D78D00FAC258 /* ProductListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		83AC23D629A3D6ED00FAC258 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23DF29A3D7DA00FAC258 /* Table */,
+				83AC23A529A3D59700FAC258 /* ProductListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83AC23DA29A3D7B900FAC258 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23D629A3D6ED00FAC258 /* View */,
+				83AC23D529A3D6E800FAC258 /* ViewModel */,
+				83AC23D429A3D6E500FAC258 /* Model */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		83AC23DF29A3D7DA00FAC258 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23E029A3D7DE00FAC258 /* Cell */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		83AC23E029A3D7DE00FAC258 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23E129A3D7E800FAC258 /* ProductCell.swift */,
+				83AC23E329A3D7EE00FAC258 /* Product.swift */,
+				83AC23E629A3D7FE00FAC258 /* AddToCartView */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		83AC23E629A3D7FE00FAC258 /* AddToCartView */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23E729A3D80A00FAC258 /* AddToCartView.swift */,
+			);
+			path = AddToCartView;
+			sourceTree = "<group>";
+		};
+		83AC23EB29A3D89A00FAC258 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23EC29A3D8A100FAC258 /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		83AC23EC29A3D8A100FAC258 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23ED29A3D8A900FAC258 /* Bundle+Extension.swift */,
+				83AC23EF29A3D8AE00FAC258 /* String+Extension.swift */,
+				83AC23F129A3D8B700FAC258 /* UIColor+Extension.swift */,
+				83AC23F329A3D8BE00FAC258 /* Double+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83AC23AB29A3D59800FAC258 /* Assets.xcassets in Resources */,
+				83AC23F629A3D9B400FAC258 /* Products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +383,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83AC23A629A3D59700FAC258 /* ViewController.swift in Sources */,
+				83AC23A629A3D59700FAC258 /* ProductListViewController.swift in Sources */,
+				83AC23EA29A3D86900FAC258 /* Deals.swift in Sources */,
+				83AC23F429A3D8BE00FAC258 /* Double+Extension.swift in Sources */,
+				83AC23E429A3D7EE00FAC258 /* Product.swift in Sources */,
+				83AC23EE29A3D8A900FAC258 /* Bundle+Extension.swift in Sources */,
+				83AC23F029A3D8AE00FAC258 /* String+Extension.swift in Sources */,
+				83AC23E829A3D80A00FAC258 /* AddToCartView.swift in Sources */,
+				83AC23DE29A3D7D500FAC258 /* Cart.swift in Sources */,
 				83AC23A229A3D59700FAC258 /* AppDelegate.swift in Sources */,
+				83AC23DC29A3D7D200FAC258 /* ProductListResponse.swift in Sources */,
+				83AC23D929A3D78D00FAC258 /* ProductListViewModel.swift in Sources */,
+				83AC23F229A3D8B700FAC258 /* UIColor+Extension.swift in Sources */,
+				83AC23E229A3D7E800FAC258 /* ProductCell.swift in Sources */,
 				83AC23A429A3D59700FAC258 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +558,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7C9T7K4LUL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CabifyShop/Info.plist;
+				INFOPLIST_FILE = CabifyShop/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -457,7 +585,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7C9T7K4LUL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CabifyShop/Info.plist;
+				INFOPLIST_FILE = CabifyShop/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
