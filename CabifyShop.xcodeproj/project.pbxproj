@@ -10,9 +10,7 @@
 		83AC23A229A3D59700FAC258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A129A3D59700FAC258 /* AppDelegate.swift */; };
 		83AC23A429A3D59700FAC258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A329A3D59700FAC258 /* SceneDelegate.swift */; };
 		83AC23A629A3D59700FAC258 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A529A3D59700FAC258 /* ViewController.swift */; };
-		83AC23A929A3D59700FAC258 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23A729A3D59700FAC258 /* Main.storyboard */; };
 		83AC23AB29A3D59800FAC258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23AA29A3D59800FAC258 /* Assets.xcassets */; };
-		83AC23AE29A3D59800FAC258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23AC29A3D59800FAC258 /* LaunchScreen.storyboard */; };
 		83AC23B929A3D59900FAC258 /* CabifyShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */; };
 		83AC23C329A3D59900FAC258 /* CabifyShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23C229A3D59900FAC258 /* CabifyShopUITests.swift */; };
 		83AC23C529A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */; };
@@ -40,9 +38,7 @@
 		83AC23A129A3D59700FAC258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83AC23A329A3D59700FAC258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		83AC23A529A3D59700FAC258 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		83AC23A829A3D59700FAC258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83AC23AA29A3D59800FAC258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		83AC23AD29A3D59800FAC258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83AC23AF29A3D59800FAC258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83AC23B429A3D59900FAC258 /* CabifyShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CabifyShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopTests.swift; sourceTree = "<group>"; };
@@ -102,9 +98,7 @@
 				83AC23A129A3D59700FAC258 /* AppDelegate.swift */,
 				83AC23A329A3D59700FAC258 /* SceneDelegate.swift */,
 				83AC23A529A3D59700FAC258 /* ViewController.swift */,
-				83AC23A729A3D59700FAC258 /* Main.storyboard */,
 				83AC23AA29A3D59800FAC258 /* Assets.xcassets */,
-				83AC23AC29A3D59800FAC258 /* LaunchScreen.storyboard */,
 				83AC23AF29A3D59800FAC258 /* Info.plist */,
 			);
 			path = CabifyShop;
@@ -231,9 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83AC23AE29A3D59800FAC258 /* LaunchScreen.storyboard in Resources */,
 				83AC23AB29A3D59800FAC258 /* Assets.xcassets in Resources */,
-				83AC23A929A3D59700FAC258 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +287,6 @@
 			targetProxy = 83AC23BF29A3D59900FAC258 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		83AC23A729A3D59700FAC258 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83AC23A829A3D59700FAC258 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		83AC23AC29A3D59800FAC258 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83AC23AD29A3D59800FAC258 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		83AC23C629A3D59900FAC258 /* Debug */ = {
@@ -444,7 +417,6 @@
 				INFOPLIST_FILE = CabifyShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +444,6 @@
 				INFOPLIST_FILE = CabifyShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
