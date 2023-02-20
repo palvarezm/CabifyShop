@@ -95,11 +95,8 @@
 		83AC23A029A3D59700FAC258 /* CabifyShop */ = {
 			isa = PBXGroup;
 			children = (
-				83AC23A129A3D59700FAC258 /* AppDelegate.swift */,
-				83AC23A329A3D59700FAC258 /* SceneDelegate.swift */,
-				83AC23A529A3D59700FAC258 /* ViewController.swift */,
-				83AC23AA29A3D59800FAC258 /* Assets.xcassets */,
-				83AC23AF29A3D59800FAC258 /* Info.plist */,
+				83AC23D229A3D69C00FAC258 /* Resources */,
+				83AC23D129A3D69700FAC258 /* Sources */,
 			);
 			path = CabifyShop;
 			sourceTree = "<group>";
@@ -119,6 +116,25 @@
 				83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */,
 			);
 			path = CabifyShopUITests;
+			sourceTree = "<group>";
+		};
+		83AC23D129A3D69700FAC258 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23A129A3D59700FAC258 /* AppDelegate.swift */,
+				83AC23A329A3D59700FAC258 /* SceneDelegate.swift */,
+				83AC23A529A3D59700FAC258 /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		83AC23D229A3D69C00FAC258 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23AA29A3D59800FAC258 /* Assets.xcassets */,
+				83AC23AF29A3D59800FAC258 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
