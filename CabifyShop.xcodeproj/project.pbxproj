@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83AC23A229A3D59700FAC258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A129A3D59700FAC258 /* AppDelegate.swift */; };
+		83AC23A429A3D59700FAC258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A329A3D59700FAC258 /* SceneDelegate.swift */; };
+		83AC23A629A3D59700FAC258 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A529A3D59700FAC258 /* ViewController.swift */; };
+		83AC23A929A3D59700FAC258 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23A729A3D59700FAC258 /* Main.storyboard */; };
+		83AC23AB29A3D59800FAC258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23AA29A3D59800FAC258 /* Assets.xcassets */; };
+		83AC23AE29A3D59800FAC258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23AC29A3D59800FAC258 /* LaunchScreen.storyboard */; };
+		83AC23B929A3D59900FAC258 /* CabifyShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */; };
+		83AC23C329A3D59900FAC258 /* CabifyShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23C229A3D59900FAC258 /* CabifyShopUITests.swift */; };
+		83AC23C529A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83AC23B529A3D59900FAC258 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83AC239629A3D59700FAC258 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83AC239D29A3D59700FAC258;
+			remoteInfo = CabifyShop;
+		};
+		83AC23BF29A3D59900FAC258 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83AC239629A3D59700FAC258 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83AC239D29A3D59700FAC258;
+			remoteInfo = CabifyShop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		83AC239E29A3D59700FAC258 /* CabifyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CabifyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83AC23A129A3D59700FAC258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83AC23A329A3D59700FAC258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		83AC23A529A3D59700FAC258 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83AC23A829A3D59700FAC258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83AC23AA29A3D59800FAC258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83AC23AD29A3D59800FAC258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83AC23AF29A3D59800FAC258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83AC23B429A3D59900FAC258 /* CabifyShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CabifyShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopTests.swift; sourceTree = "<group>"; };
+		83AC23BE29A3D59900FAC258 /* CabifyShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CabifyShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83AC23C229A3D59900FAC258 /* CabifyShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopUITests.swift; sourceTree = "<group>"; };
+		83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83AC239B29A3D59700FAC258 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AC23B129A3D59900FAC258 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AC23BB29A3D59900FAC258 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83AC239529A3D59700FAC258 = {
+			isa = PBXGroup;
+			children = (
+				83AC23A029A3D59700FAC258 /* CabifyShop */,
+				83AC23B729A3D59900FAC258 /* CabifyShopTests */,
+				83AC23C129A3D59900FAC258 /* CabifyShopUITests */,
+				83AC239F29A3D59700FAC258 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83AC239F29A3D59700FAC258 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83AC239E29A3D59700FAC258 /* CabifyShop.app */,
+				83AC23B429A3D59900FAC258 /* CabifyShopTests.xctest */,
+				83AC23BE29A3D59900FAC258 /* CabifyShopUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83AC23A029A3D59700FAC258 /* CabifyShop */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23A129A3D59700FAC258 /* AppDelegate.swift */,
+				83AC23A329A3D59700FAC258 /* SceneDelegate.swift */,
+				83AC23A529A3D59700FAC258 /* ViewController.swift */,
+				83AC23A729A3D59700FAC258 /* Main.storyboard */,
+				83AC23AA29A3D59800FAC258 /* Assets.xcassets */,
+				83AC23AC29A3D59800FAC258 /* LaunchScreen.storyboard */,
+				83AC23AF29A3D59800FAC258 /* Info.plist */,
+			);
+			path = CabifyShop;
+			sourceTree = "<group>";
+		};
+		83AC23B729A3D59900FAC258 /* CabifyShopTests */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */,
+			);
+			path = CabifyShopTests;
+			sourceTree = "<group>";
+		};
+		83AC23C129A3D59900FAC258 /* CabifyShopUITests */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23C229A3D59900FAC258 /* CabifyShopUITests.swift */,
+				83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */,
+			);
+			path = CabifyShopUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83AC239D29A3D59700FAC258 /* CabifyShop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83AC23C829A3D59900FAC258 /* Build configuration list for PBXNativeTarget "CabifyShop" */;
+			buildPhases = (
+				83AC239A29A3D59700FAC258 /* Sources */,
+				83AC239B29A3D59700FAC258 /* Frameworks */,
+				83AC239C29A3D59700FAC258 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CabifyShop;
+			productName = CabifyShop;
+			productReference = 83AC239E29A3D59700FAC258 /* CabifyShop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83AC23B329A3D59900FAC258 /* CabifyShopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83AC23CB29A3D59900FAC258 /* Build configuration list for PBXNativeTarget "CabifyShopTests" */;
+			buildPhases = (
+				83AC23B029A3D59900FAC258 /* Sources */,
+				83AC23B129A3D59900FAC258 /* Frameworks */,
+				83AC23B229A3D59900FAC258 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83AC23B629A3D59900FAC258 /* PBXTargetDependency */,
+			);
+			name = CabifyShopTests;
+			productName = CabifyShopTests;
+			productReference = 83AC23B429A3D59900FAC258 /* CabifyShopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		83AC23BD29A3D59900FAC258 /* CabifyShopUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83AC23CE29A3D59900FAC258 /* Build configuration list for PBXNativeTarget "CabifyShopUITests" */;
+			buildPhases = (
+				83AC23BA29A3D59900FAC258 /* Sources */,
+				83AC23BB29A3D59900FAC258 /* Frameworks */,
+				83AC23BC29A3D59900FAC258 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83AC23C029A3D59900FAC258 /* PBXTargetDependency */,
+			);
+			name = CabifyShopUITests;
+			productName = CabifyShopUITests;
+			productReference = 83AC23BE29A3D59900FAC258 /* CabifyShopUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83AC239629A3D59700FAC258 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					83AC239D29A3D59700FAC258 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					83AC23B329A3D59900FAC258 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 83AC239D29A3D59700FAC258;
+					};
+					83AC23BD29A3D59900FAC258 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 83AC239D29A3D59700FAC258;
+					};
+				};
+			};
+			buildConfigurationList = 83AC239929A3D59700FAC258 /* Build configuration list for PBXProject "CabifyShop" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83AC239529A3D59700FAC258;
+			productRefGroup = 83AC239F29A3D59700FAC258 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83AC239D29A3D59700FAC258 /* CabifyShop */,
+				83AC23B329A3D59900FAC258 /* CabifyShopTests */,
+				83AC23BD29A3D59900FAC258 /* CabifyShopUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83AC239C29A3D59700FAC258 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83AC23AE29A3D59800FAC258 /* LaunchScreen.storyboard in Resources */,
+				83AC23AB29A3D59800FAC258 /* Assets.xcassets in Resources */,
+				83AC23A929A3D59700FAC258 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AC23B229A3D59900FAC258 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AC23BC29A3D59900FAC258 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83AC239A29A3D59700FAC258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83AC23A629A3D59700FAC258 /* ViewController.swift in Sources */,
+				83AC23A229A3D59700FAC258 /* AppDelegate.swift in Sources */,
+				83AC23A429A3D59700FAC258 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AC23B029A3D59900FAC258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83AC23B929A3D59900FAC258 /* CabifyShopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AC23BA29A3D59900FAC258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83AC23C529A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift in Sources */,
+				83AC23C329A3D59900FAC258 /* CabifyShopUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83AC23B629A3D59900FAC258 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83AC239D29A3D59700FAC258 /* CabifyShop */;
+			targetProxy = 83AC23B529A3D59900FAC258 /* PBXContainerItemProxy */;
+		};
+		83AC23C029A3D59900FAC258 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83AC239D29A3D59700FAC258 /* CabifyShop */;
+			targetProxy = 83AC23BF29A3D59900FAC258 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		83AC23A729A3D59700FAC258 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83AC23A829A3D59700FAC258 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		83AC23AC29A3D59800FAC258 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83AC23AD29A3D59800FAC258 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83AC23C629A3D59900FAC258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83AC23C729A3D59900FAC258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83AC23C929A3D59900FAC258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7C9T7K4LUL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CabifyShop/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palvarezm.CabifyShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		83AC23CA29A3D59900FAC258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7C9T7K4LUL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CabifyShop/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palvarezm.CabifyShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		83AC23CC29A3D59900FAC258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7C9T7K4LUL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palvarezm.CabifyShopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CabifyShop.app/CabifyShop";
+			};
+			name = Debug;
+		};
+		83AC23CD29A3D59900FAC258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7C9T7K4LUL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palvarezm.CabifyShopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CabifyShop.app/CabifyShop";
+			};
+			name = Release;
+		};
+		83AC23CF29A3D59900FAC258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7C9T7K4LUL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palvarezm.CabifyShopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CabifyShop;
+			};
+			name = Debug;
+		};
+		83AC23D029A3D59900FAC258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7C9T7K4LUL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palvarezm.CabifyShopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CabifyShop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83AC239929A3D59700FAC258 /* Build configuration list for PBXProject "CabifyShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83AC23C629A3D59900FAC258 /* Debug */,
+				83AC23C729A3D59900FAC258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83AC23C829A3D59900FAC258 /* Build configuration list for PBXNativeTarget "CabifyShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83AC23C929A3D59900FAC258 /* Debug */,
+				83AC23CA29A3D59900FAC258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83AC23CB29A3D59900FAC258 /* Build configuration list for PBXNativeTarget "CabifyShopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83AC23CC29A3D59900FAC258 /* Debug */,
+				83AC23CD29A3D59900FAC258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83AC23CE29A3D59900FAC258 /* Build configuration list for PBXNativeTarget "CabifyShopUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83AC23CF29A3D59900FAC258 /* Debug */,
+				83AC23D029A3D59900FAC258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83AC239629A3D59700FAC258 /* Project object */;
+}
