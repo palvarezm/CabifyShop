@@ -16,6 +16,7 @@ class ProductListViewModel {
 
     enum Output {
         case updateList
+        case showViewForEmptyList
     }
 
     private let output = PassthroughSubject<ProductListViewModel.Output, Never>()
@@ -36,9 +37,8 @@ class ProductListViewModel {
         input.sink { [unowned self] event in
             switch event {
             case .viewDidLoad:
-                getProductList()
-                DispatchQueue.main.async {
-                    output.send(.updateList)
+                Task {
+                    await updateViewFromService()
                 }
                 break
             case .onProductCellEvent(let event, let product):
@@ -46,9 +46,7 @@ class ProductListViewModel {
                 case .quantityDidChange(let action):
                     cart.handleAction(on: product, for: action)
                     handleActionOnProductList(on: product)
-                    DispatchQueue.main.async {
-                        output.send(.updateList)
-                    }
+                    output.send(.updateList)
                 break
                 }
             }
@@ -68,12 +66,24 @@ class ProductListViewModel {
         }
     }
 
-    private func getProductList() {
-        let productListResponse = Bundle.main.decode(ProductListResponse.self, from: "Products.json")
-        productListResponse.products.forEach { [weak self] product in
-            self?.productList.append(Product(name: product.name,
-                                             code: product.code,
-                                             originalPrice: product.price.formatAsStringPrice()))
+    private func updateViewFromService() async {
+        do {
+            let productListResponse = try await ProductsService().getProductsFromAPI()
+            productListResponse.products.forEach {
+                productList.append(Product(name: $0.name,
+                                           code: $0.code,
+                                           originalPrice: $0.price.formatAsStringPrice()))
+            }
+            let outputValue: Output = productListResponse.products.isEmpty
+                                    ? .showViewForEmptyList
+                                    : .updateList
+            DispatchQueue.main.async { [weak self] in
+                self?.output.send(outputValue)
+            }
+        } catch {
+            DispatchQueue.main.async { [weak self] in
+                self?.output.send(.showViewForEmptyList)
+            }
         }
     }
 }

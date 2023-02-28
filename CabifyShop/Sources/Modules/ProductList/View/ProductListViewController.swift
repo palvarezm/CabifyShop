@@ -18,6 +18,13 @@ class ProductListViewController: UIViewController {
         return view
     }()
 
+    lazy private var emptyTableView: UIView = {
+        let view = EmptyTableView()
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     let viewModel = ProductListViewModel()
 
     private let output = PassthroughSubject<ProductListViewModel.Input, Never>()
@@ -36,7 +43,12 @@ class ProductListViewController: UIViewController {
         viewModel.transform(input: output.eraseToAnyPublisher()).sink { [unowned self] event in
             switch event {
             case .updateList:
+                self.productsTableView.isHidden = false
+                self.emptyTableView.isHidden = true
                 self.productsTableView.reloadData()
+            case .showViewForEmptyList:
+                self.productsTableView.isHidden = true
+                self.emptyTableView.isHidden = false
             }
         }.store(in: &cancellables)
     }
@@ -45,6 +57,7 @@ class ProductListViewController: UIViewController {
     private func setup() {
         view.backgroundColor = .white
         setupTableView()
+        setupEmptyTableView()
     }
 
     private func setupTableView() {
@@ -56,6 +69,16 @@ class ProductListViewController: UIViewController {
             productsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         productsTableView.register(ProductCell.self, forCellReuseIdentifier: String(describing: ProductCell.self))
+    }
+
+    private func setupEmptyTableView() {
+        view.addSubview(emptyTableView)
+        NSLayoutConstraint.activate([
+            emptyTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            emptyTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emptyTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }
 
@@ -83,7 +106,5 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         "Total price: \(viewModel.totalPrice)"
     }
-
-
 }
 
