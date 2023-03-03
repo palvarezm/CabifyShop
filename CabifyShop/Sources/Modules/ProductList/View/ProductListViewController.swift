@@ -56,7 +56,9 @@ class ProductListViewController: UIViewController {
 
     // MARK: - Binding
     private func observe() {
-        viewModel.transform(input: output.eraseToAnyPublisher()).sink { [unowned self] event in
+        viewModel.transform(input: output.eraseToAnyPublisher())
+            .receive(on: DispatchQueue.main)
+            .sink { [unowned self] event in
             switch event {
             case .updateList:
                 self.productsTableView.isHidden = false

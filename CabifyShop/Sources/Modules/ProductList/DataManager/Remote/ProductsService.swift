@@ -7,7 +7,11 @@
 
 import Foundation
 
-class ProductsService {
+protocol ProductService {
+    func getProductsFromAPI() async throws -> ProductListResponse
+}
+
+class ProductsServiceImp: ProductService {
     let baseURL = "https://gist.githubusercontent.com/palcalde/6c19259bd32dd6aafa327fa557859c2f/raw/ba51779474a150ee4367cda4f4ffacdcca479887"
 
     func getProductsFromAPI() async throws -> ProductListResponse {

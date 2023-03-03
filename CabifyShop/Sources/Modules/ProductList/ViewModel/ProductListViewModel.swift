@@ -23,6 +23,7 @@ class ProductListViewModel {
     private let output = PassthroughSubject<ProductListViewModel.Output, Never>()
     private var cancellables = Set<AnyCancellable>()
 
+    var productService: ProductService
     var productList = [Product]()
     private var cart = Cart()
 
@@ -38,6 +39,10 @@ class ProductListViewModel {
         var cartProducts = [String]()
         cart.products.forEach { cartProducts.append("\($0.name)(\($0.quantity)) -> \($0.totalPrice.formatAsStringPrice())") }
         return cartProducts.joined(separator: "\n")
+    }
+
+    init(productService: ProductService = ProductsServiceImp()) {
+        self.productService = productService
     }
 
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
@@ -78,7 +83,7 @@ class ProductListViewModel {
 
     private func updateViewFromService() async {
         do {
-            let productListResponse = try await ProductsService().getProductsFromAPI()
+            let productListResponse = try await productService.getProductsFromAPI()
             productListResponse.products.forEach {
                 productList.append(Product(name: $0.name,
                                            code: $0.code,
@@ -87,13 +92,9 @@ class ProductListViewModel {
             let outputValue: Output = productListResponse.products.isEmpty
                                     ? .showViewForEmptyList
                                     : .updateList
-            DispatchQueue.main.async { [weak self] in
-                self?.output.send(outputValue)
-            }
+                output.send(outputValue)
         } catch {
-            DispatchQueue.main.async { [weak self] in
-                self?.output.send(.showViewForEmptyList)
-            }
+                output.send(.showViewForEmptyList)
         }
     }
 }
