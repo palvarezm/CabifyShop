@@ -14,6 +14,19 @@ struct Product {
     let originalPrice: String
     var discountedPrice: String
     var quantity: String
+    var dealsInfo: DealsInfo? {
+        guard let code = ProductCodes.allCases.filter({ $0.rawValue == code }).first  else { return nil }
+
+        let title = "\(name) Deals:"
+        let discountInfoArray = Deals.allCases.filter({ $0.codes.contains(code) }).map { $0.discountInfo }
+        let dealsList = discountInfoArray.joined(separator: "\n")
+        return DealsInfo(title: title, deals: dealsList)
+    }
+
+    struct DealsInfo {
+        let title: String
+        let deals: String
+    }
 
     init(name: String, code: String, originalPrice: String) {
         self.id = UUID()

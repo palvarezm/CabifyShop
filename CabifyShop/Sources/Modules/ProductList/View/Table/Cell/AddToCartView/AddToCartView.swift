@@ -30,7 +30,7 @@ class AddToCartView: UIView {
     }()
 
     lazy private var addToCartButton: UIButton = {
-        var view = UIButton()
+        let view = UIButton()
         view.configuration = .bordered()
         view.configuration?.image = UIImage(systemName: "cart")
         view.configuration?.baseForegroundColor = .white
@@ -87,7 +87,7 @@ class AddToCartView: UIView {
         setup()
     }
 
-    // MARK: - Configuration
+    // MARK: - Setup
     private func setup() {
         setupView()
     }
@@ -124,6 +124,7 @@ class AddToCartView: UIView {
         itemCounterStackView.addArrangedSubview(upButton)
     }
 
+    // MARK: - Configuration
     func setQuantity(quantity: String) {
         unitCounterLabel.text = quantity
     }

@@ -112,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				83A863C329ADB9A300ABA8B7 /* ProductsService.swift */,
+				83AC23DB29A3D7D200FAC258 /* ProductListResponse.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -194,7 +195,6 @@
 		83AC23D429A3D6E500FAC258 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				83AC23DB29A3D7D200FAC258 /* ProductListResponse.swift */,
 				83AC23DD29A3D7D500FAC258 /* Cart.swift */,
 				83AC23E929A3D86900FAC258 /* Deals.swift */,
 			);

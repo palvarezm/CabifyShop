@@ -10,6 +10,7 @@ import Combine
 
 enum ProductCellEvent {
     case quantityDidChange(action: ProductQuantityAction)
+    case tooltipTapped
 }
 
 class ProductCell: UITableViewCell {
@@ -22,27 +23,42 @@ class ProductCell: UITableViewCell {
         return view
     }()
 
+    lazy private var nameDiscountStackView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fillProportionally
+        return view
+    }()
+
     lazy private var nameLabel: UILabel = {
-        var view = UILabel()
+        let view = UILabel()
+        return view
+    }()
+
+    lazy private var discountImageButton: UIButton = {
+        let view = UIButton()
+        view.isHidden = true
+        view.configuration = .bordered()
+        view.configuration?.image = UIImage(systemName: "info.circle")
+        view.configuration?.baseBackgroundColor = .white
+        view.configuration?.baseForegroundColor = .primary
         return view
     }()
 
     lazy private var priceStackView: UIStackView = {
         let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.spacing = Constants.priceStackViewSpacing
         view.distribution = .fillEqually
         return view
     }()
 
     lazy private var originalPriceLabel: UILabel = {
-        var view = UILabel()
+        let view = UILabel()
         view.font = view.font.withSize(Constants.priceLabelFontSize)
         return view
     }()
 
     lazy private var discountedPriceLabel: UILabel = {
-        var view = UILabel()
+        let view = UILabel()
         view.font = view.font.withSize(Constants.priceLabelFontSize)
         return view
     }()
@@ -84,12 +100,14 @@ class ProductCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Setup
     private func setup() {
         selectionStyle = .none
         contentView.isUserInteractionEnabled = true
         setupProductInfoStackView()
         setupPriceStackView()
         setupAddToCartView()
+        setDiscountAlertForProduct()
     }
 
     private func setupProductInfoStackView() {
@@ -99,7 +117,9 @@ class ProductCell: UITableViewCell {
             productInfoStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.standardPadding),
             productInfoStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.standardPadding)
         ])
-        productInfoStackView.addArrangedSubview(nameLabel)
+        nameDiscountStackView.addArrangedSubview(nameLabel)
+        nameDiscountStackView.addArrangedSubview(discountImageButton)
+        productInfoStackView.addArrangedSubview(nameDiscountStackView)
         productInfoStackView.addArrangedSubview(priceStackView)
     }
 
@@ -127,6 +147,22 @@ class ProductCell: UITableViewCell {
         originalPriceLabel.textColor = originalPriceLabelColor
         discountedPriceLabel.text = product.discountedPrice
         discountedPriceLabel.isHidden = product.discountedPrice == product.originalPrice
+        discountImageButton.isHidden = isDiscountImageHidden()
         addToCartView.setQuantity(quantity: product.quantity)
+    }
+
+    private func isDiscountImageHidden() -> Bool {
+        guard let code = product?.code else { return true }
+        
+        return !Deals.codesWithDeals.map({ $0.rawValue }).contains(code)
+    }
+
+    // MARK: - Actions
+    private func setDiscountAlertForProduct() {
+        discountImageButton.addTarget(self, action: #selector(discountImageButtonTapped), for: .touchUpInside)
+    }
+
+    @objc private func discountImageButtonTapped() {
+        eventSubject.send(.tooltipTapped)
     }
 }

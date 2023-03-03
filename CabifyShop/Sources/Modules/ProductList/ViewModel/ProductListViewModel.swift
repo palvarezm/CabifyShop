@@ -17,6 +17,7 @@ class ProductListViewModel {
     enum Output {
         case updateList
         case showViewForEmptyList
+        case showDeals(product: Product)
     }
 
     private let output = PassthroughSubject<ProductListViewModel.Output, Never>()
@@ -30,7 +31,7 @@ class ProductListViewModel {
     }
 
     var totalPrice: Double {
-        cart.products.map{ $0.totalPrice }.reduce(0, +)
+        cart.totalPrice
     }
 
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
@@ -48,6 +49,8 @@ class ProductListViewModel {
                     handleActionOnProductList(on: product)
                     output.send(.updateList)
                 break
+                case .tooltipTapped:
+                    output.send(.showDeals(product: product))
                 }
             }
         }.store(in: &cancellables)
@@ -57,10 +60,11 @@ class ProductListViewModel {
     private func handleActionOnProductList(on product: Product) {
         guard let index = productList.firstIndex(where: { $0.code == product.code }) else { return }
 
+        // Find the product on the cart
         if let cartProduct = cart.products.first(where: { $0.code == product.code }) {
             productList[index] = Product(from: cartProduct)
         } else {
-            // TODO: Fix not having cartProduct's discountedPrice before removing it
+            // If product isn't found on cart, its deleted and we need to revert it to its original state
             productList[index].discountedPrice = productList[index].originalPrice
             productList[index].quantity = "0"
         }

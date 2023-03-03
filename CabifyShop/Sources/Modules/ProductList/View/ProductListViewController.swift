@@ -49,11 +49,14 @@ class ProductListViewController: UIViewController {
             case .showViewForEmptyList:
                 self.productsTableView.isHidden = true
                 self.emptyTableView.isHidden = false
+            case .showDeals(let product):
+                self.showAlert(for: product)
             }
+            
         }.store(in: &cancellables)
     }
 
-    // MARK: - Configuration
+    // MARK: - Setup
     private func setup() {
         view.backgroundColor = .white
         setupTableView()
@@ -79,6 +82,18 @@ class ProductListViewController: UIViewController {
             emptyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             emptyTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+
+    // MARK: - Actions
+    private func showAlert(for product: Product) {
+        let alert = UIAlertController(title: product.dealsInfo?.title,
+                                      message: product.dealsInfo?.deals,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: .default,
+                                      handler: nil))
+        alert.show(self, sender: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

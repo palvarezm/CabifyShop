@@ -19,7 +19,7 @@ class EmptyTableView: UIView {
     lazy var emptyTableLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "There's no products for now"
+        view.text = "There are no products for now"
         return view
     }()
 
@@ -34,7 +34,7 @@ class EmptyTableView: UIView {
         setup()
     }
 
-    // MARK: - Configuration
+    // MARK: - Setup
     private func setup() {
         setupImage()
         setupLabel()

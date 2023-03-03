@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - ProductCodes
-enum ProductCodes: String {
+enum ProductCodes: String, CaseIterable {
     case voucher = "VOUCHER"
     case tShirt = "TSHIRT"
     case mug = "MUG"
@@ -18,6 +18,8 @@ enum ProductCodes: String {
 enum Deals: CaseIterable {
     case twoForOneVoucher
     case moreThanThreeTShirt
+
+    static let codesWithDeals: [ProductCodes] = Array(Set(Deals.allCases.flatMap { $0.codes }))
 
     var codes: [ProductCodes] {
         switch self {
@@ -33,17 +35,17 @@ enum Deals: CaseIterable {
         }
     }
 
-    var discountInfoTooltip: String? {
-        switch self {
-        case .twoForOneVoucher: return "2-for-1: Buy 2, get 1 free"
-        case .moreThanThreeTShirt: return "Buy 3+, get € 1 discount"
-        }
-    }
-
     var quantityModifier: Int {
         switch self {
         case .twoForOneVoucher: return 1
         case .moreThanThreeTShirt: return 0
+        }
+    }
+
+    var discountInfo: String {
+        switch self {
+        case .twoForOneVoucher: return "Buy 2, get 1 free"
+        case .moreThanThreeTShirt: return "Buy 3+, get € 1 discount"
         }
     }
 }
