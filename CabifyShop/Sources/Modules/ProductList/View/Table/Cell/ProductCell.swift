@@ -60,6 +60,7 @@ class ProductCell: UITableViewCell {
     lazy private var discountedPriceLabel: UILabel = {
         let view = UILabel()
         view.font = view.font.withSize(Constants.priceLabelFontSize)
+        view.textColor = .gray
         return view
     }()
 
@@ -72,7 +73,7 @@ class ProductCell: UITableViewCell {
         return view
     }()
 
-    enum Constants {
+    private enum Constants {
         static let priceLabelFontSize = 14.0
         static let standardPadding = 16.0
         static let priceStackViewSpacing = 4.0
@@ -140,15 +141,23 @@ class ProductCell: UITableViewCell {
     func configure(with product: Product) {
         self.product = product
         nameLabel.text = product.name
-        let originalPriceLabelColor: UIColor = product.discountedPrice != product.originalPrice
-                                                ? .red
-                                                : .black
-        originalPriceLabel.text = product.originalPrice
-        originalPriceLabel.textColor = originalPriceLabelColor
+        setOriginalPriceLabel(product: product)
         discountedPriceLabel.text = product.discountedPrice
         discountedPriceLabel.isHidden = product.discountedPrice == product.originalPrice
         discountImageButton.isHidden = isDiscountImageHidden()
         addToCartView.setQuantity(quantity: product.quantity)
+    }
+
+    private func setOriginalPriceLabel(product: Product) {
+        let originalPriceLabelColor: UIColor = product.discountedPrice != product.originalPrice
+                                                ? .red
+                                                : .gray
+        let attributedText = NSAttributedString(string: product.originalPrice,
+                                                attributes: [.strikethroughStyle: NSUnderlineStyle.single.rawValue])
+        originalPriceLabel.attributedText = product.discountedPrice != product.originalPrice
+                                            ? attributedText
+                                            : NSMutableAttributedString(string: product.originalPrice)
+        originalPriceLabel.textColor = originalPriceLabelColor
     }
 
     private func isDiscountImageHidden() -> Bool {

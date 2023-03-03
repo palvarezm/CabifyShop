@@ -34,6 +34,12 @@ class ProductListViewModel {
         cart.totalPrice
     }
 
+    var cartDetails: String {
+        var cartProducts = [String]()
+        cart.products.forEach { cartProducts.append("\($0.name)(\($0.quantity)) -> \($0.totalPrice.formatAsStringPrice())") }
+        return cartProducts.joined(separator: "\n")
+    }
+
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
         input.sink { [unowned self] event in
             switch event {

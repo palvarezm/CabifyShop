@@ -10,6 +10,17 @@ import Combine
 
 class ProductListViewController: UIViewController {
     // MARK: - Properties
+    lazy private var checkoutButton: UIButton = {
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.configuration = .bordered()
+        view.configuration?.baseBackgroundColor = .primary
+        view.configuration?.baseForegroundColor = .white
+        view.configuration?.cornerStyle = .large
+        view.configuration?.title = "Go to checkout"
+        return view
+    }()
+
     lazy private var productsTableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -24,6 +35,11 @@ class ProductListViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
+    private enum Constants {
+        static let checkoutButtonTopMargin = 12.0
+        static let tableTopMargin = 4.0
+    }
 
     let viewModel = ProductListViewModel()
 
@@ -50,7 +66,7 @@ class ProductListViewController: UIViewController {
                 self.productsTableView.isHidden = true
                 self.emptyTableView.isHidden = false
             case .showDeals(let product):
-                self.showAlert(for: product)
+                self.showDealsAlert(for: product)
             }
             
         }.store(in: &cancellables)
@@ -59,14 +75,24 @@ class ProductListViewController: UIViewController {
     // MARK: - Setup
     private func setup() {
         view.backgroundColor = .white
+        setupCheckoutButton()
+        setCheckoutButtonAction()
         setupTableView()
         setupEmptyTableView()
+    }
+
+    private func setupCheckoutButton() {
+        view.addSubview(checkoutButton)
+        NSLayoutConstraint.activate([
+            checkoutButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: Constants.checkoutButtonTopMargin),
+            checkoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
 
     private func setupTableView() {
         view.addSubview(productsTableView)
         NSLayoutConstraint.activate([
-            productsTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            productsTableView.topAnchor.constraint(equalTo: checkoutButton.bottomAnchor, constant: Constants.tableTopMargin),
             productsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             productsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             productsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -85,7 +111,22 @@ class ProductListViewController: UIViewController {
     }
 
     // MARK: - Actions
-    private func showAlert(for product: Product) {
+    private func setCheckoutButtonAction() {
+        checkoutButton.addTarget(self, action: #selector(showCheckoutAlert), for: .touchUpInside)
+    }
+
+    @objc private func showCheckoutAlert() {
+        let alert = UIAlertController(title: "Checkout",
+                                      message: viewModel.cartDetails,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Buy for \(viewModel.totalPrice.formatAsStringPrice())",
+                                      style: .default,
+                                      handler: nil))
+        alert.show(self, sender: nil)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    private func showDealsAlert(for product: Product) {
         let alert = UIAlertController(title: product.dealsInfo?.title,
                                       message: product.dealsInfo?.deals,
                                       preferredStyle: .alert)

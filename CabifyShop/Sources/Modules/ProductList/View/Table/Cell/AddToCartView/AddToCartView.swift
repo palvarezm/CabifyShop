@@ -68,7 +68,7 @@ class AddToCartView: UIView {
         return view
     }()
 
-    enum Constants {
+    private enum Constants {
         static let itemCounterSpacing = 10.0
         static let totalContainerPadding = 10.0
     }

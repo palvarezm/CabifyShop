@@ -26,7 +26,7 @@ struct ProductCart {
         self.id = product.id
         self.code = product.code
         self.name = product.name
-        self.originalPrice = Double(product.originalPrice.formatFromFormattedPrice())
+        self.originalPrice = Double(product.originalPrice.formatFromStringPrice())
     }
 }
 

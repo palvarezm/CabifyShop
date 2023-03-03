@@ -20,7 +20,7 @@ extension String {
     // MARK: - Formatter
     static let pricePrefix = "€ "
 
-    func formatFromFormattedPrice() -> Double {
+    func formatFromStringPrice() -> Double {
         let priceString = self.replacingOccurrences(of: String.pricePrefix, with: "")
         return Double(priceString) ?? 0.0
     }
