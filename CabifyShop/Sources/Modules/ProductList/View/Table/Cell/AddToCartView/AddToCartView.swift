@@ -36,7 +36,6 @@ class AddToCartView: UIView {
         view.configuration?.baseForegroundColor = .white
         view.configuration?.baseBackgroundColor = .primary
         view.configuration?.cornerStyle = .large
-        view.isHidden = true
         return view
     }()
 
@@ -44,6 +43,7 @@ class AddToCartView: UIView {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.spacing = Constants.itemCounterSpacing
+        view.isHidden = true
         return view
     }()
 
@@ -127,6 +127,8 @@ class AddToCartView: UIView {
     // MARK: - Configuration
     func setQuantity(quantity: String) {
         unitCounterLabel.text = quantity
+        addToCartButton.isHidden = quantity != "0"
+        itemCounterStackView.isHidden = quantity == "0"
     }
 
     // MARK: - Actions
