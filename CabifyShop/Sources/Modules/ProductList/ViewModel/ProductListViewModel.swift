@@ -25,7 +25,7 @@ class ProductListViewModel {
 
     var productService: ProductService
     var productList = [Product]()
-    private var cart = Cart()
+    var cart = Cart()
 
     var totalQuantities: Int {
         cart.products.map{ $0.quantity }.reduce(0, +)
@@ -41,8 +41,9 @@ class ProductListViewModel {
         return cartProducts.joined(separator: "\n")
     }
 
-    init(productService: ProductService = ProductsServiceImp()) {
+    init(productService: ProductService = ProductsServiceImp(), cart: Cart = Cart()) {
         self.productService = productService
+        self.cart = cart
     }
 
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
@@ -92,9 +93,9 @@ class ProductListViewModel {
             let outputValue: Output = productListResponse.products.isEmpty
                                     ? .showViewForEmptyList
                                     : .updateList
-                output.send(outputValue)
+            output.send(outputValue)
         } catch {
-                output.send(.showViewForEmptyList)
+            output.send(.showViewForEmptyList)
         }
     }
 }
