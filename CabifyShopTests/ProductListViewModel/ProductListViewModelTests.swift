@@ -16,32 +16,29 @@ final class ProductListViewModelTests: XCTestCase {
     private var cart: Cart!
 
     private var viewControllerOutput = PassthroughSubject<ProductListViewModel.Input, Never>()
+    private var viewModelOutput: AnyPublisher<ProductListViewModel.Output, Never>!
     private var cancellables = Set<AnyCancellable>()
 
     override func setUp() {
+        super.setUp()
         productService = ProductServiceMock()
         cart = Cart()
         sut = .init(productService: productService, cart: cart)
-        super.setUp()
+        viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
     }
 
     override func tearDown() {
-        sut = nil
-        productService = nil
         super.tearDown()
-    }
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        productService = nil
+        cart = nil
+        sut = nil
+        viewModelOutput = nil
+        viewControllerOutput = PassthroughSubject<ProductListViewModel.Input, Never>()
+        cancellables = Set<AnyCancellable>()
     }
 
     func testServiceIsCalledWhenViewDidLoad() throws {
         // Given
-        let viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
         let expectation = XCTestExpectation(description: "Fetch has been called")
 
         // When
@@ -56,8 +53,6 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testFirstProductFromDefaultProductList() throws {
         // Given
-        let viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
-        
         productService.mockedProductList = ProductListResponse(products: ProductResponseListMother.defaultProductResponseList)
         let updateProductListExpectation = XCTestExpectation(description: "Update products input was called")
 
@@ -83,7 +78,6 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testShowViewFromEmptyListGivenEmptyResponse() throws {
         // Given
-        let viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
         productService.mockedProductList = ProductListResponse(products: ProductResponseListMother.emptyProductResponseList)
 
         let emptyProductListExpectation = XCTestExpectation(description: "Set products input was called")
@@ -107,15 +101,16 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testUpdateViewModelWhenProductWithoutDealsIsAddedToCart() {
         // Given
-        let viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
         let addedProduct = ProductMother.new
+        productService.mockedProductList = ProductListResponse(products: ProductResponseListMother.newProductResponseList)
+        viewControllerOutput.send(.viewDidLoad)
 
         // Then
-        viewModelOutput.sink { [weak self] event in
+        viewModelOutput.sink { [unowned self] event in
             if case .updateList = event {
-                XCTAssertEqual(self?.sut.totalQuantities, 1)
-                XCTAssertEqual(self?.sut.totalPrice, ProductMother.new.originalPrice.formatFromStringPrice())
-                XCTAssertEqual(self?.sut.cartDetails.isEmpty, false)
+                XCTAssertEqual(sut.totalQuantities, 1)
+                XCTAssertEqual(sut.totalPrice, ProductMother.new.originalPrice.formatFromStringPrice())
+                XCTAssertEqual(sut.cartDetails.isEmpty, false)
             }
         }.store(in: &cancellables)
 
@@ -126,15 +121,16 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testUpdateViewModelWhenTwoForOneDealIsApplied() {
         // Given
-        let viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
+        productService.mockedProductList = ProductListResponse(products: ProductResponseListMother.voucherProductResponseList)
+        viewControllerOutput.send(.viewDidLoad)
         let addedProduct = ProductMother.voucher
 
         // Then
-        viewModelOutput.sink { [weak self] event in
+        viewModelOutput.sink { [unowned self] event in
             if case .updateList = event {
-                XCTAssertEqual(self?.sut.totalQuantities, 1 + Deals.twoForOneVoucher.quantityModifier)
-                XCTAssertEqual(self?.sut.totalPrice, addedProduct.originalPrice.formatFromStringPrice())
-                XCTAssertEqual(self?.sut.cartDetails.isEmpty, false)
+                XCTAssertEqual(sut.totalQuantities, 1 + Deals.twoForOneVoucher.quantityModifier)
+                XCTAssertEqual(sut.totalPrice, addedProduct.originalPrice.formatFromStringPrice())
+                XCTAssertEqual(sut.cartDetails.isEmpty, false)
             }
         }.store(in: &cancellables)
 
@@ -145,7 +141,8 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testUpdateViewModelWhenTwoForOneDealIsRemoved() {
         // Given
-        let viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
+        productService.mockedProductList = ProductListResponse(products: ProductResponseListMother.voucherProductResponseList)
+        viewControllerOutput.send(.viewDidLoad)
         let product = ProductMother.voucher
         viewControllerOutput.send(.onProductCellEvent(event: .quantityDidChange(action: .add),
                                                       product: product))
@@ -166,7 +163,6 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testUpdateViewModelWhenMoreThanThreeDealIsApplied() {
         // Given
-        let viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
         let addedProduct = ProductMother.tShirt
         let desiredQuantity = 3
 
@@ -194,7 +190,6 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testUpdateViewModelWhenMoreThanThreeDealIsRemoved() {
         // Given
-        let viewModelOutput = sut.transform(input: viewControllerOutput.eraseToAnyPublisher())
         let product = ProductMother.tShirt
         let desiredQuantity = 3
         for _ in 1...desiredQuantity {
@@ -221,6 +216,29 @@ final class ProductListViewModelTests: XCTestCase {
         // When
         viewControllerOutput.send(.onProductCellEvent(event: .quantityDidChange(action: .decrease),
                                                       product: product))
+    }
+
+    func testCheckoutTextContainsCartValuesWhenProductsAreAdded() {
+        // Given
+        let voucherProduct = ProductMother.voucher
+        let mugProduct = ProductMother.mug
+
+        // When
+        viewModelOutput.sink { _ in }.store(in: &cancellables)
+        viewControllerOutput.send(.onProductCellEvent(event: .quantityDidChange(action: .add),
+                                                      product: mugProduct))
+        viewControllerOutput.send(.onProductCellEvent(event: .quantityDidChange(action: .add),
+                                                      product: voucherProduct))
+
+        // Then
+        let cartDetails = sut.cartDetails
+        XCTAssertTrue(cartDetails.contains(voucherProduct.name))
+        XCTAssertTrue(cartDetails.contains(voucherProduct.quantity))
+        XCTAssertTrue(cartDetails.contains(sut.cart.products[0].discountedPrice.formatAsStringPrice()))
+
+        XCTAssertTrue(cartDetails.contains(mugProduct.name))
+        XCTAssertTrue(cartDetails.contains(mugProduct.quantity))
+        XCTAssertTrue(cartDetails.contains(sut.cart.products[1].originalPrice.formatAsStringPrice()))
     }
 }
 

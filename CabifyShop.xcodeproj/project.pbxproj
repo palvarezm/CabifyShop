@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		839F621B29B3D5840077F15B /* ProductMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F621A29B3D5840077F15B /* ProductMother.swift */; };
 		83A863C429ADB9A300ABA8B7 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A863C329ADB9A300ABA8B7 /* ProductsService.swift */; };
 		83A863C629ADC14600ABA8B7 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A863C529ADC14600ABA8B7 /* EmptyTableView.swift */; };
+		83AB5A8829B3182200B84A35 /* ProductResponseListMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AB5A8729B3182200B84A35 /* ProductResponseListMother.swift */; };
 		83AC23A229A3D59700FAC258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A129A3D59700FAC258 /* AppDelegate.swift */; };
 		83AC23A429A3D59700FAC258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A329A3D59700FAC258 /* SceneDelegate.swift */; };
 		83AC23A629A3D59700FAC258 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23A529A3D59700FAC258 /* ProductListViewController.swift */; };
 		83AC23AB29A3D59800FAC258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23AA29A3D59800FAC258 /* Assets.xcassets */; };
-		83AC23B929A3D59900FAC258 /* CabifyShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */; };
+		83AC23B929A3D59900FAC258 /* ProductListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23B829A3D59900FAC258 /* ProductListViewModelTests.swift */; };
 		83AC23C329A3D59900FAC258 /* CabifyShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23C229A3D59900FAC258 /* CabifyShopUITests.swift */; };
 		83AC23C529A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */; };
 		83AC23D929A3D78D00FAC258 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23D829A3D78D00FAC258 /* ProductListViewModel.swift */; };
@@ -48,8 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		839F621A29B3D5840077F15B /* ProductMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMother.swift; sourceTree = "<group>"; };
 		83A863C329ADB9A300ABA8B7 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 		83A863C529ADC14600ABA8B7 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
+		83AB5A8729B3182200B84A35 /* ProductResponseListMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponseListMother.swift; sourceTree = "<group>"; };
 		83AC239E29A3D59700FAC258 /* CabifyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CabifyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AC23A129A3D59700FAC258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83AC23A329A3D59700FAC258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +61,7 @@
 		83AC23AA29A3D59800FAC258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83AC23AF29A3D59800FAC258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83AC23B429A3D59900FAC258 /* CabifyShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CabifyShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopTests.swift; sourceTree = "<group>"; };
+		83AC23B829A3D59900FAC258 /* ProductListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModelTests.swift; sourceTree = "<group>"; };
 		83AC23BE29A3D59900FAC258 /* CabifyShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CabifyShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AC23C229A3D59900FAC258 /* CabifyShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopUITests.swift; sourceTree = "<group>"; };
 		83AC23C429A3D59900FAC258 /* CabifyShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabifyShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -100,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		839F621C29B4F61F0077F15B /* ProductListViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				83AC23B829A3D59900FAC258 /* ProductListViewModelTests.swift */,
+				83AB5A8729B3182200B84A35 /* ProductResponseListMother.swift */,
+				839F621A29B3D5840077F15B /* ProductMother.swift */,
+			);
+			path = ProductListViewModel;
+			sourceTree = "<group>";
+		};
 		83A863C029ADB96C00ABA8B7 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +163,7 @@
 		83AC23B729A3D59900FAC258 /* CabifyShopTests */ = {
 			isa = PBXGroup;
 			children = (
-				83AC23B829A3D59900FAC258 /* CabifyShopTests.swift */,
+				839F621C29B4F61F0077F15B /* ProductListViewModel */,
 			);
 			path = CabifyShopTests;
 			sourceTree = "<group>";
@@ -428,7 +442,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83AC23B929A3D59900FAC258 /* CabifyShopTests.swift in Sources */,
+				83AB5A8829B3182200B84A35 /* ProductResponseListMother.swift in Sources */,
+				83AC23B929A3D59900FAC258 /* ProductListViewModelTests.swift in Sources */,
+				839F621B29B3D5840077F15B /* ProductMother.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
