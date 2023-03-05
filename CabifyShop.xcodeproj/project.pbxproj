@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		839F621B29B3D5840077F15B /* ProductMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F621A29B3D5840077F15B /* ProductMother.swift */; };
+		839F621E29B4F77D0077F15B /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F621D29B4F77D0077F15B /* LoadingIndicatorView.swift */; };
 		83A863C429ADB9A300ABA8B7 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A863C329ADB9A300ABA8B7 /* ProductsService.swift */; };
 		83A863C629ADC14600ABA8B7 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A863C529ADC14600ABA8B7 /* EmptyTableView.swift */; };
 		83AB5A8829B3182200B84A35 /* ProductResponseListMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AB5A8729B3182200B84A35 /* ProductResponseListMother.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		839F621A29B3D5840077F15B /* ProductMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMother.swift; sourceTree = "<group>"; };
+		839F621D29B4F77D0077F15B /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		83A863C329ADB9A300ABA8B7 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 		83A863C529ADC14600ABA8B7 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
 		83AB5A8729B3182200B84A35 /* ProductResponseListMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponseListMother.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				83AC23EC29A3D8A100FAC258 /* Extension */,
+				839F621D29B4F77D0077F15B /* LoadingIndicatorView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				83AC23EA29A3D86900FAC258 /* Deals.swift in Sources */,
 				83AC23F429A3D8BE00FAC258 /* Double+Extension.swift in Sources */,
 				83AC23E429A3D7EE00FAC258 /* Product.swift in Sources */,
+				839F621E29B4F77D0077F15B /* LoadingIndicatorView.swift in Sources */,
 				83AC23EE29A3D8A900FAC258 /* Bundle+Extension.swift in Sources */,
 				83AC23F029A3D8AE00FAC258 /* String+Extension.swift in Sources */,
 				83AC23E829A3D80A00FAC258 /* AddToCartView.swift in Sources */,

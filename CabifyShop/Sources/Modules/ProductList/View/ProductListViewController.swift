@@ -26,6 +26,7 @@ class ProductListViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = self
         view.dataSource = self
+        view.isHidden = true
         return view
     }()
 
@@ -50,6 +51,7 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         observe()
+        showLoading()
         output.send(.viewDidLoad)
         setup()
     }
@@ -61,14 +63,16 @@ class ProductListViewController: UIViewController {
             .sink { [unowned self] event in
             switch event {
             case .updateList:
-                self.productsTableView.isHidden = false
-                self.emptyTableView.isHidden = true
-                self.productsTableView.reloadData()
+                productsTableView.isHidden = false
+                emptyTableView.isHidden = true
+                productsTableView.reloadData()
+                hideLoading()
             case .showViewForEmptyList:
-                self.productsTableView.isHidden = true
-                self.emptyTableView.isHidden = false
+                hideLoading()
+                productsTableView.isHidden = true
+                emptyTableView.isHidden = false
             case .showDeals(let product):
-                self.showDealsAlert(for: product)
+                showDealsAlert(for: product)
             }
             
         }.store(in: &cancellables)
@@ -137,6 +141,14 @@ class ProductListViewController: UIViewController {
                                       handler: nil))
         alert.show(self, sender: nil)
         self.present(alert, animated: true, completion: nil)
+    }
+
+    private func showLoading() {
+        LoadingIndicatorView.show(self.view, loadingText: "Loading")
+    }
+
+    private func hideLoading() {
+        LoadingIndicatorView.hide()
     }
 }
 
