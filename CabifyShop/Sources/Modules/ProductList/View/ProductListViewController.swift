@@ -17,7 +17,7 @@ class ProductListViewController: UIViewController {
         view.configuration?.baseBackgroundColor = .primary
         view.configuration?.baseForegroundColor = .white
         view.configuration?.cornerStyle = .large
-        view.configuration?.title = "Go to checkout"
+        view.configuration?.title = "product_list_go_to_checkout".localized
         return view
     }()
 
@@ -122,10 +122,10 @@ class ProductListViewController: UIViewController {
     }
 
     @objc private func showCheckoutAlert() {
-        let alert = UIAlertController(title: "Checkout",
+        let alert = UIAlertController(title: "product_list_checkout_alert_title".localized,
                                       message: viewModel.cartDetails,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Buy for \(viewModel.totalPrice.formatAsStringPrice())",
+        alert.addAction(UIAlertAction(title: "product_list_checkout_alert_accept_action".localized + " \(viewModel.totalPrice.formatAsStringPrice())",
                                       style: .default,
                                       handler: nil))
         alert.show(self, sender: nil)
@@ -136,7 +136,7 @@ class ProductListViewController: UIViewController {
         let alert = UIAlertController(title: product.dealsInfo?.title,
                                       message: product.dealsInfo?.deals,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok",
+        alert.addAction(UIAlertAction(title: "product_list_deals_info_alert_accept_action".localized,
                                       style: .default,
                                       handler: nil))
         alert.show(self, sender: nil)
@@ -144,7 +144,7 @@ class ProductListViewController: UIViewController {
     }
 
     private func showLoading() {
-        LoadingIndicatorView.show(self.view, loadingText: "Loading")
+        LoadingIndicatorView.show(self.view, loadingText: "product_list_loading_indicator_view_text".localized)
     }
 
     private func hideLoading() {
@@ -170,11 +170,11 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "Number of items: \(viewModel.totalQuantities)"
+        "product_list_table_header".localized + " \(viewModel.totalQuantities)"
     }
 
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        "Total price: \(viewModel.totalPrice)"
+        "product_list_table_footer".localized + " \(viewModel.totalPrice)"
     }
 }
 

@@ -44,8 +44,8 @@ enum Deals: CaseIterable {
 
     var discountInfo: String {
         switch self {
-        case .twoForOneVoucher: return "Buy 2, get 1 free"
-        case .moreThanThreeTShirt: return "Buy 3+, get € 1 discount"
+        case .twoForOneVoucher: return "two_for_one_deal_info".localized
+        case .moreThanThreeTShirt: return "more_than_three_tShirt_deal_info".localized
         }
     }
 }

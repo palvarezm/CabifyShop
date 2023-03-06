@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  CabifyShop
+
+  Created by Paul Alvarez on 6/03/23.
+  
+*/
+
+// MARK: - Product List
+"product_list_go_to_checkout" = "Go to checkout";
+"product_list_checkout_alert_title" = "Checkout";
+"product_list_checkout_alert_accept_action" = "Buy for";
+"product_list_deals_info_alert_accept_action" = "Ok";
+"product_list_loading_indicator_view_text" = "Loading";
+"product_list_table_header" = "Number of items:";
+"product_list_table_footer" = "Total price:";
+"product_list_empty_table_text" = "There are no products for now";
+"product_list_deals_info_alert_title" = "Deals:";
+
+// MARK: - Deals
+"two_for_one_deal_info" = "Buy 2, get 1 free";
+"more_than_three_tShirt_deal_info" = "Buy 3+, get € 1 discount";

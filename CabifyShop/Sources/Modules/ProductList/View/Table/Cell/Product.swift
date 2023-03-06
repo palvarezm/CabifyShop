@@ -17,7 +17,7 @@ struct Product {
     var dealsInfo: DealsInfo? {
         guard let code = ProductCodes.allCases.filter({ $0.rawValue == code }).first  else { return nil }
 
-        let title = "\(name) Deals:"
+        let title = "\(name) " + "product_list_deals_info_alert_title".localized
         let discountInfoArray = Deals.allCases.filter({ $0.codes.contains(code) }).map { $0.discountInfo }
         let dealsList = discountInfoArray.joined(separator: "\n")
         return DealsInfo(title: title, deals: dealsList)

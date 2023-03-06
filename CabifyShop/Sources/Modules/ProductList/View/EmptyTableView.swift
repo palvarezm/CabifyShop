@@ -19,7 +19,7 @@ class EmptyTableView: UIView {
     lazy var emptyTableLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "There are no products for now"
+        view.text = "product_list_empty_table_text".localized
         return view
     }()
 
