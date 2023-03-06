@@ -18,6 +18,7 @@ class ProductListViewController: UIViewController {
         view.configuration?.baseForegroundColor = .white
         view.configuration?.cornerStyle = .large
         view.configuration?.title = "product_list_go_to_checkout".localized
+        view.isEnabled = false
         return view
     }()
 
@@ -46,18 +47,19 @@ class ProductListViewController: UIViewController {
 
     private let output = PassthroughSubject<ProductListViewModel.Input, Never>()
     private var cancellables = Set<AnyCancellable>()
+    @Published var isCartNotEmpty = true
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        observe()
+        bindings()
         showLoading()
         output.send(.viewDidLoad)
         setup()
     }
 
     // MARK: - Binding
-    private func observe() {
+    private func bindings() {
         viewModel.transform(input: output.eraseToAnyPublisher())
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] event in
@@ -66,6 +68,7 @@ class ProductListViewController: UIViewController {
                 productsTableView.isHidden = false
                 emptyTableView.isHidden = true
                 productsTableView.reloadData()
+                isCartNotEmpty = viewModel.totalQuantities != 0
                 hideLoading()
             case .showViewForEmptyList:
                 hideLoading()
@@ -76,6 +79,11 @@ class ProductListViewController: UIViewController {
             }
             
         }.store(in: &cancellables)
+        
+        $isCartNotEmpty
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isEnabled, on: checkoutButton)
+            .store(in: &cancellables)
     }
 
     // MARK: - Setup

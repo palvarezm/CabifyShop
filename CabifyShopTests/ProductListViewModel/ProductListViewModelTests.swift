@@ -102,8 +102,6 @@ final class ProductListViewModelTests: XCTestCase {
     func testUpdateViewModelWhenProductWithoutDealsIsAddedToCart() {
         // Given
         let addedProduct = ProductMother.new
-        productService.mockedProductList = ProductListResponse(products: ProductResponseListMother.newProductResponseList)
-        viewControllerOutput.send(.viewDidLoad)
 
         // Then
         viewModelOutput.sink { [unowned self] event in
@@ -121,8 +119,6 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testUpdateViewModelWhenTwoForOneDealIsApplied() {
         // Given
-        productService.mockedProductList = ProductListResponse(products: ProductResponseListMother.voucherProductResponseList)
-        viewControllerOutput.send(.viewDidLoad)
         let addedProduct = ProductMother.voucher
 
         // Then
@@ -141,8 +137,6 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testUpdateViewModelWhenTwoForOneDealIsRemoved() {
         // Given
-        productService.mockedProductList = ProductListResponse(products: ProductResponseListMother.voucherProductResponseList)
-        viewControllerOutput.send(.viewDidLoad)
         let product = ProductMother.voucher
         viewControllerOutput.send(.onProductCellEvent(event: .quantityDidChange(action: .add),
                                                       product: product))
