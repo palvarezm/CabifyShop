@@ -27,11 +27,9 @@
 		83AC23E429A3D7EE00FAC258 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23E329A3D7EE00FAC258 /* Product.swift */; };
 		83AC23E829A3D80A00FAC258 /* AddToCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23E729A3D80A00FAC258 /* AddToCartView.swift */; };
 		83AC23EA29A3D86900FAC258 /* Deals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23E929A3D86900FAC258 /* Deals.swift */; };
-		83AC23EE29A3D8A900FAC258 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23ED29A3D8A900FAC258 /* Bundle+Extension.swift */; };
 		83AC23F029A3D8AE00FAC258 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23EF29A3D8AE00FAC258 /* String+Extension.swift */; };
 		83AC23F229A3D8B700FAC258 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23F129A3D8B700FAC258 /* UIColor+Extension.swift */; };
 		83AC23F429A3D8BE00FAC258 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC23F329A3D8BE00FAC258 /* Double+Extension.swift */; };
-		83AC23F629A3D9B400FAC258 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 83AC23F529A3D9B400FAC258 /* Products.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,11 +74,9 @@
 		83AC23E329A3D7EE00FAC258 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		83AC23E729A3D80A00FAC258 /* AddToCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartView.swift; sourceTree = "<group>"; };
 		83AC23E929A3D86900FAC258 /* Deals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deals.swift; sourceTree = "<group>"; };
-		83AC23ED29A3D8A900FAC258 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		83AC23EF29A3D8AE00FAC258 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		83AC23F129A3D8B700FAC258 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		83AC23F329A3D8BE00FAC258 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
-		83AC23F529A3D9B400FAC258 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +209,6 @@
 			children = (
 				83AC23AA29A3D59800FAC258 /* Assets.xcassets */,
 				83AC23AF29A3D59800FAC258 /* Info.plist */,
-				83AC23F529A3D9B400FAC258 /* Products.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -303,7 +298,6 @@
 		83AC23EC29A3D8A100FAC258 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				83AC23ED29A3D8A900FAC258 /* Bundle+Extension.swift */,
 				83AC23EF29A3D8AE00FAC258 /* String+Extension.swift */,
 				83AC23F129A3D8B700FAC258 /* UIColor+Extension.swift */,
 				83AC23F329A3D8BE00FAC258 /* Double+Extension.swift */,
@@ -417,7 +411,6 @@
 			files = (
 				83AC23AB29A3D59800FAC258 /* Assets.xcassets in Resources */,
 				83A2F9B329B5ACDC00193C7E /* Localizable.strings in Resources */,
-				83AC23F629A3D9B400FAC258 /* Products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +441,6 @@
 				83AC23F429A3D8BE00FAC258 /* Double+Extension.swift in Sources */,
 				83AC23E429A3D7EE00FAC258 /* Product.swift in Sources */,
 				839F621E29B4F77D0077F15B /* LoadingIndicatorView.swift in Sources */,
-				83AC23EE29A3D8A900FAC258 /* Bundle+Extension.swift in Sources */,
 				83AC23F029A3D8AE00FAC258 /* String+Extension.swift in Sources */,
 				83AC23E829A3D80A00FAC258 /* AddToCartView.swift in Sources */,
 				83AC23DE29A3D7D500FAC258 /* Cart.swift in Sources */,

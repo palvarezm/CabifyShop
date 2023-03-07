@@ -39,16 +39,6 @@
                ReferencedContainer = "container:CabifyShop.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83AC23BD29A3D59900FAC258"
-               BuildableName = "CabifyShopUITests.xctest"
-               BlueprintName = "CabifyShopUITests"
-               ReferencedContainer = "container:CabifyShop.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
